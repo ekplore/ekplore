@@ -1,4 +1,7 @@
-
+<?php
+	if(isset($_POST["zip"]))
+		$azip = $_POST["zip"];
+?>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css" />
@@ -12,9 +15,10 @@
             <div class="headerContainer">
                 <div class="logo"></div>
                     <div class="searchbar">
-                            <input type="text" placeholder='Type in a zip code ...'></input>
-                            <div class="searchbutton"> <img src="images/search.png"></div>
-
+                    	<form action="/" method="post">
+                            <input type="text" class="text" name="zip" placeholder='Type in a zip code ...' ></input>
+	                            <div class="searchbutton"> <input type="image" class="searchbutton" src="images/search.png" value="Submit" alt="Submit"/></div>
+						</form>
                         <div class="locateicon">
 <!--                            <img src="images/local.png">-->
                         </div>
@@ -52,12 +56,7 @@
                 <div style="clear:both;"></div>
                 <div class="bottomSection">
                     <div class="tweets">
-                        <?php include('tweet.php'); ?>
-                        <?php include('tweet.php'); ?>
-                        <?php include('tweet.php'); ?>
-                        <?php include('tweet.php'); ?>
-                        <?php include('tweet.php'); ?>
-                        <?php include('tweet.php'); ?>
+                        <?php include('publictweet.php'); ?>
                   
 
 
@@ -67,8 +66,7 @@
 <!--                <div class="bottomSection">-->
                 <div class="photofeed">
                     <div class="photorow">
-                        <?php include('hyperpublic.php')?>
-                        
+                        <?php include('hyperpublic.php'); ?>
                         
                         
                          <div style="clear:both;"></div>
@@ -100,9 +98,9 @@
         <div class="footer">
             <center>
             <ul>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Press</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="team.php">Our Team</a></li>
+                <li><a href="press.php">Press</a></li>
+                <li><a href="mailto:team@ekplore.com">Contact Us</a></li>
             </ul>
             </center>
         </div>

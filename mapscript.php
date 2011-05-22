@@ -27,6 +27,10 @@ function success(position) {
 
   document.querySelector('article').appendChild(mapcanvas);
 
+	var lat = '/zipcode.php?zip=90028&lat=1';
+	var lng = '/zipcode.php?zip=90028&lng=1';
+
+
   var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   var myOptions = {

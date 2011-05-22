@@ -1,40 +1,18 @@
 <?php
-/**
-* Initialize the cURL session
-*/
-$ch = curl_init();
-/**
-* Set the URL of the page or file to download.
-*/
-$link = 'http://ws.geonames.org/postalCodeSearch?postalcode=94104&country=US';
-curl_setopt($ch, CURLOPT_URL,$link);
-/**
-* Create a new file
-*/
-$fp = fopen('zip.xml', 'w');
-/**
-* Ask cURL to write the contents to a file
-*/
-curl_setopt($ch, CURLOPT_FILE, $fp);
-/**
-* Execute the cURL session
-*/
-curl_exec ($ch);
-/**
-* Close cURL session and file
-*/
-curl_close ($ch);
-fclose($fp);
-
-
-// curl_setopt($ch, CURLOPT_URL, $link);
-// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-// 
-// curl_close($ch);
-
-$xmlUrl = "zip.xml"; // XML feed file/URL
-$xmlStr = file_get_contents($xmlUrl);
-$xmlObj = simplexml_load_string($xmlStr);
-$arrXml = objectsIntoArray($xmlObj);
-print_r($arrXml);
+//Get lat long from zipcode. GET variables.
+$doc = new DOMDocument();
+	$zip = $_GET["zip"];
+	$doc->load('http://ws.geonames.org/postalCodeSearch?postalcode='.$zip.'&country=US');
+  	$arrFeeds = array();
+  	foreach ($doc->getElementsByTagName('code') as $node) {
+    $itemRSS = array ( 
+      'lat' => $node->getElementsByTagName('lat')->item(0)->nodeValue,
+      'lng' => $node->getElementsByTagName('lng')->item(0)->nodeValue,
+      );
+    array_push($arrFeeds, $itemRSS);
+  }
+  if($_GET["lat"]==1)
+	  echo $arrFeeds[0]['lat'];
+  if($_GET["lng"]==1)	
+  	echo $arrFeeds[0]['lng'];
 ?>
