@@ -1,0 +1,212 @@
+body {
+font-family: helvetica,sans-serif;
+color:#ffffff;
+background-color:#333333;
+padding:0px;
+margin:0px;
+min-width:960px;
+}
+h1 {
+   font-size:18px;
+   letter-spacing:-1px;
+   margin:0px;
+}
+p{
+    font-size:12px;
+    margin:0px;
+}
+.header{
+    width:100%;
+    height:53px;
+    background-image: url('images/searchtop.png');
+    padding-top:10px;
+    min-width:960px;
+}
+.headerContainer {
+    min-width:960px;
+    width:100%;
+}
+.searchbar{
+    float:right;
+margin-right:20px;
+width:600px;
+}
+.locateicon {
+    width:43px;
+    height:43px;
+    float:left;
+    display:inline;
+    margin-left:40px;
+    background-image:url('images/local.png');
+}
+.locateicon:hover {
+    background-image:url('images/localhover.png');
+}
+input {
+    padding:10px;
+    width:350px;
+    border-radius:10 0 0 10px;
+    -webkit-border-radius:10 0 0 10px;
+    -moz-border-radius:10 0 0 10px;
+    background-color:#4b4b4b;
+    border:1px solid #666565;
+    box-shadow:inset 0px 0px 5px #333;
+    color:#686a6c;
+    height:40px;
+    float:left;
+}
+.searchbutton {
+    float:left;
+}
+
+.logo {
+   background-image: url('images/logo.png');
+   background-repeat:none;
+   width:150px;
+   height:38px;
+   float:left;
+   margin-left:20px;
+   margin-top:5px;
+}
+
+.subbar {
+    height:34px;
+    width:100%;
+    clear:both;
+    background-image: url('images/subbarbg.png');
+/*    margin-bottom:20px;*/
+}
+.subbar {
+    padding-left:20px;
+    padding-top:5px;
+}
+
+.map {
+    width:100%;
+    height:370px;
+    clear:both;
+/*    margin-top:-33px;*/
+}
+.bottomSection{
+    width:30%;
+    margin-right:40px;
+    float:left;
+}
+.tweets {
+    width:100%;
+    height:auto;
+/*    padding:20 0px;*/
+    float:left;
+    min-width:320px;
+}
+
+.photofeed {
+    width:100%;
+    min-width:320px;
+    height:auto;
+    float:left;
+/*    padding:20px;*/
+    background-color:#6a6a6a;
+    
+/*    padding:20 0px;*/
+margin-left:auto;
+margin-right:auto;
+}
+.singlePhoto {
+    height:80px;
+    width:80px;
+    float:left;
+    border:2px #ccc solid;
+    box-shadow:0px 0px 3px #333;
+/*    margin:10px;*/
+}
+
+.singlephoto img {
+    height:80px;
+    width:80px;
+}
+.everything {
+    width:100%;
+    height:500px;
+    float:left;
+/*    padding:20 0px;*/
+}
+
+.postbar {
+    border-bottom:1px solid #666;
+    border-top:2px solid #fff;
+    border-right:3px solid #333;
+    height:65px;
+    width:100%;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f2f3', endColorstr='#d7d7d8'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f3), to(#d7d7d8)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #f2f2f3,  #d7d7d8); /* for firefox 3.6+ */
+    padding:10px;
+    padding-right:40px;
+    float:left;
+    min-width:400px;
+    
+
+}
+.sectionbar{
+    background-color:#999;
+    background-image: url('images/searchtop.png');
+    width:100%;
+    height:50px;
+    padding:5px;
+    min-width:320px;
+}
+.bottomSection h2 {
+    font-size:26px;
+    margin:0px;
+    padding:0px;
+    margin-bottom:0px;
+    line-height:50px;
+
+}
+
+.postbar h1 {
+    color:#36393a;
+    font-size:15px;
+    text-shadow:0px 2px 0px #ffffff;
+    margin-bottom: 5px;
+}
+.postbar p {
+    color:#6b6b6b;
+    text-shadow:0px 2px 0px #ffffff;
+    min-width:220px;
+}
+.tweetPhoto, .postPhoto {
+    float:left;
+    margin-right:20px;
+    box-shadow:0px 0px 3px #666;
+    -mox-box-shadow:0px 0px 3px #666;
+    -webkit-box-shadow:0px 0px 3px #666;
+    width:60px;
+    height:60px;
+    border:2px #fff solid;
+    
+}
+
+.tweetphoto img {
+    height:60px;
+    width:60px;
+}
+
+.tweetText {
+    float:left;
+    width:300px;
+}
+
+.postPhoto img{
+    height:60px;
+    width:60px;
+
+}
+
+.bottom {
+    min-width:960px;
+    width:100%
+    margin-left:auto;
+    margin-right:auto;
+}
