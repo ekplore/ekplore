@@ -76,12 +76,8 @@
 <!--                </div>-->
                 <div class="bottomSection">
                 <div class="everything">
-                   <?php include('everythingelse.php'); ?>
-                   <?php include('everythingelse.php'); ?>
-                   <?php include('everythingelse.php'); ?>
-                   <?php include('everythingelse.php'); ?>
-                   <?php include('everythingelse.php'); ?>
-                   <?php include('everythingelse.php'); ?>
+                   <?php include('meetup.php'); ?>
+                   
      
                 </div>
 

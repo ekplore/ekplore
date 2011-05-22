@@ -36,7 +36,7 @@ $lng = curl_exec($lon);
 
 //Call Twitter.
 $twit = curl_init();
-curl_setopt($twit, CURLOPT_URL, "http://search.twitter.com/search.json?geocode=".$lat.",".$lng.",1mi&page=1");
+curl_setopt($twit, CURLOPT_URL, "http://search.twitter.com/search.json?geocode=".$lat.",".$lng.",5mi&page=1");
 curl_setopt($twit, CURLOPT_RETURNTRANSFER, 1);
 $res = curl_exec($twit);
 
