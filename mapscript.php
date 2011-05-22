@@ -28,6 +28,7 @@ function success(position) {
   document.querySelector('article').appendChild(mapcanvas);
 
   var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+  var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   var myOptions = {
     zoom: 15,
     center: latlng,
