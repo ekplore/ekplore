@@ -11,14 +11,13 @@
         <div class="header">
             <div class="headerContainer">
                 <a href="http://beta.ekplore.com"><div class="logo"></div></a>
-                    <div class="searchbar">
-                            <input type="text" placeholder='Type in a location ...'></input>
-                            <div class="searchbutton"> 
-                                <img src="images/search.png">
-                            </div>
-
+                <div class="searchbar">
+                    	<form action="/" method="post">
+                            <input type="text" class="text" name="zip" placeholder='Type in a zip code ...' ></input>
+	                            <div class="searchbutton"> <input type="image" class="searchbutton" src="images/search.png" value="Submit" alt="Submit"/></div>
+						</form>
                         <div class="locateicon">
-                            <img src="images/local.png">
+<!--                            <img src="images/local.png">-->
                         </div>
                     </div>
             </div>
@@ -42,9 +41,9 @@
                 <img src="images/arun.jpg">
                 </div>
                 <div class="teammemberinfo">
-                    <h1>Arun Kalaiselvan</h1>
+                    <h1>Arunram Kalaiselvan</h1>
                     <i><h2 style="font-weight:normal;">Co-Founder  |  Lead Engineer</h2></i>
-                    <p>Asher is an entrepreneur, product guru, and designer based out of Los Angeles, CA. He has been involved in multiple start-ups in the past, including http://UseUreka.com, and http://www.roozt.com</p>
+                    <p>Arun lives for the chance to tackle a complex project and in turn learn a new skill. A former programmer turned designer, Arun recently graduated with a Masters Degree in Integrated Digital Media from the Polytechnic Institute of New York University. He enjoys creating games and especially loves creating game based systems.<br/><strong>website: </strong><a href="http://www.arunram.com">arunram.com</a><br/><strong>Twitter: </strong><a href="http://www.twitter.com/looneydoodle">@looneydoodle</a></p>
                 </div>
              </div>
 

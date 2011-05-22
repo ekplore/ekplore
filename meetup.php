@@ -24,7 +24,7 @@ $zip = curl_exec($ch1);
 
 //Meetup stuff here.
 $meet = curl_init();
-curl_setopt($meet, CURLOPT_URL, "http://api.meetup.com/2/open_events?status=upcoming&radius=25.0&desc=true&offset=0&format=json&zip=".$zip."&page=10&key=74505d205b03c47486a2a79141536");
+curl_setopt($meet, CURLOPT_URL, "http://api.meetup.com/2/open_events?status=upcoming&radius=25.0&desc=true&offset=0&format=json&zip=".$zip."&page=6&key=74505d205b03c47486a2a79141536");
 curl_setopt($meet, CURLOPT_RETURNTRANSFER, 1);
 $res = curl_exec($meet);
 
@@ -44,11 +44,15 @@ for($i=0; $i<count($meetup['results']);$i++){
 	echo "</div>";
 	echo "<div class=\"postText\">";
 	echo "<h1><a href=".$link.">".$name."</a></h1>";
-	echo "<p>".$meetup['results'][$i]['venue']['address_1'].",".$meetup['results'][$i]['venue']['city'].",".$meetup['results'][$i]['venue']['state']."</p>";
+	if($meetup['results'][$i]['venue']['city']!=null)
+		echo "<p>".$meetup['results'][$i]['venue']['address_1'].",".$meetup['results'][$i]['venue']['city'].",".$meetup['results'][$i]['venue']['state']."</p>";
+	else
+		echo "<p>".$meetup['results'][$i]['group']['urlname']."</p>";
 	echo "</div></div>";
 }
 
 
 //Close Curl Connections
+curl_close($meet);
 curl_close($ch1);
 ?>

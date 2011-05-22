@@ -1,5 +1,10 @@
 <?php
-if(isset($_GET["zip"]))
+if(isset($_GET["local"]))
+{
+	$zip=10019;
+	
+}
+else if(isset($_GET["zip"]))
 	$zip = $_GET["zip"];
 else if(isset($azip))
 	$zip=$azip;

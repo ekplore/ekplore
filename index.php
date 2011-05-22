@@ -1,6 +1,8 @@
 <?php
 	if(isset($_POST["zip"]))
 		$azip = $_POST["zip"];
+		
+	include('location.php');
 ?>
 <html>
     <head>
@@ -8,6 +10,19 @@
         <title>
             
         </title>
+        <script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-6191114-4']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
     </head>
     <body>
 
@@ -20,15 +35,15 @@
 	                            <div class="searchbutton"> <input type="image" class="searchbutton" src="images/search.png" value="Submit" alt="Submit"/></div>
 						</form>
                         <div class="locateicon">
-<!--                            <img src="images/local.png">-->
+                            <a href="index.php?local=1"><img src="images/local.png"></a>
                         </div>
                     </div>
             </div>
         </div>
         <div class="subbar">
             <div class="socialbuttons">
-                <a href="#"><img src="images/fb.png"></a>
-                <a href="#"><img src="images/twitter.png"></a>
+                <a href="https://www.facebook.com/apps/application.php?id=213023292054001"><img src="images/fb.png"></a>
+                <a href="http://www.twitter.com/ekplore"><img src="images/twitter.png"></a>
 
             </div>
             <div class="distance">
@@ -57,6 +72,7 @@
                 <div class="bottomSection">
                     <div class="tweets">
                         <?php include('publictweet.php'); ?>
+                        
                   
 
 
@@ -76,8 +92,9 @@
 <!--                </div>-->
                 <div class="bottomSection">
                 <div class="everything">
-                   <?php include('meetup.php'); ?>
                    
+                   <?php include('foursquare.php') ?>
+                   <?php include('meetup.php'); ?>
      
                 </div>
 

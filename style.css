@@ -74,6 +74,10 @@ li {
     height:40px;
     float:left;
 }
+
+.text:focus {
+    outline:none;
+}
 .searchbutton {
     float:left;
     height:40px;
@@ -210,8 +214,9 @@ min-height:1056px;
 }
 .postbar p {
     color:#6b6b6b;
-    text-shadow:0px 2px 0px #ffffff;
+    text-shadow:0px 1px 0px #ffffff;
     min-width:100px;
+    font-size:10px;
 
 }
 .tweetPhoto, .postPhoto {

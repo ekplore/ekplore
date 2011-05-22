@@ -1,86 +1,48 @@
-<!DOCTYPE html> 
-<html>
-  <head>
-    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script>
-		jQuery(window).ready(function(){
-			jQuery("#btnInit").click(initiate_watchlocation);
-			jQuery("#btnStop").click(stop_watchlocation);
-		});
+<?php
 
-		var watchProcess = null;
-	  
-		function initiate_watchlocation() {
-			if (watchProcess == null) {
-				watchProcess = navigator.geolocation.watchPosition(handle_geolocation_query, handle_errors);
-			}
-		}
+//https://api.foursquare.com/v2/venues/search?ll=44.3,37.2&limit=10&radius=2000&client_id=IOMJZQBHKWLPEVSEEZXZ4SAZ24AFEJHJB4QIPMVRHYMDMATV&client_secret=ZQADY1PBUDSGUTCLOBCLFGTM5XAVRNML5U3N0BZVBXHIGS3K
+if(isset($_GET["local"]))
+{
+	$zip=10019;
+	
+}
 
-		function stop_watchlocation() {
-			if (watchProcess != null)
-			{
-				navigator.geolocation.clearWatch(watchProcess);
-				watchProcess = null;
-			}
-		}
-	  
-		function handle_errors(error)
-		{
-			switch(error.code)
-			{
-				case error.PERMISSION_DENIED: alert("user did not share Geolocation data");
-				break;
+else if(isset($_GET["zip"]))
+	$zip = $_GET["zip"];
+else if(isset($azip))
+	$zip=$azip;
+else
+{
+	
+//echo $res;
 
-				case error.POSITION_UNAVAILABLE: alert("could not detect current position");
-				break;
+//Get the zip.
+$ch1 = curl_init();
 
-				case error.TIMEOUT: alert("retrieving position timedout");
-				break;
+// set URL and other appropriate options
+curl_setopt($ch1, CURLOPT_URL, "http://beta.ekplore.com/getzip.php");
+curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1); 
+// grab URL and pass it to the browser
+$zip = curl_exec($ch1);
+//echo $zip . "<br />";
+}
 
-				default: alert("unknown error");
-				break;	
-			}
-		}
-	  
-		function handle_geolocation_query(position) {
-			var text = "Latitude: "  + position.coords.latitude  + "<br/>" +
-			            "Longitude: " + position.coords.longitude + "<br/>" +
-			            "Accuracy: "  + position.coords.accuracy  + "m<br/>" +
-			            "Time: " + new Date(position.timestamp);
-			jQuery("#info").html(text);
+// Get Lat for zip
+$lt = curl_init();
+curl_setopt($lt, CURLOPT_URL, "http://beta.ekplore.com/zipcode.php?zip=".$zip."&lat=1");
+curl_setopt($lt, CURLOPT_RETURNTRANSFER, 1);
+$lat = curl_exec($lt); 
 
-			var image_url = "http://maps.google.com/maps/api/staticmap?sensor=false&center=" + position.coords.latitude + ',' + position.coords.longitude + 
-							"&zoom=14&size=300x400&markers=color:blue|label:S|" + position.coords.latitude + ',' + position.coords.longitude;
-			
-			  var myOptions = {
-    zoom: 15,
-    center: latlng,
-    mapTypeControl: false,
-    navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+//Get Long for zip
+$lon = curl_init();
+curl_setopt($lon, CURLOPT_URL, "http://beta.ekplore.com/zipcode.php?zip=".$zip."&lng=1");
+curl_setopt($lon, CURLOPT_RETURNTRANSFER, 1);
+$lng = curl_exec($lon);
 
-  var marker = new google.maps.Marker({
-      position: latlng,
-      map: map,
-      title:""
-  });
-  
-			jQuery("#map").remove();
-			jQuery(document.body).append(
-			  jQuery(document.createElement("img")).attr("src", image_url).attr('id','map')
-			);
-		}
-    </script>
-  </head>
-  <body>
-    <div>
-      <button id="btnInit" >Monitor my location</button>
-      <button id="btnStop" >Stop monitoring</button>
-    </div>
-    <div id="info">
-    </div>
-  </body>
-</html>
+
+
+
+curl_close($ch1);
+curl_close($lat);
+curl_close($lon);
+?>
