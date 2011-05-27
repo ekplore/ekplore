@@ -82,7 +82,9 @@
 <!--                <div class="bottomSection">-->
                 <div class="photofeed">
                     <div class="photorow">
-                        <?php include('hyperpublic.php'); ?>
+                        <?php 
+                        include('instagram.php');
+                        include('hyperpublic.php'); ?>
                         
                         
                          <div style="clear:both;"></div>

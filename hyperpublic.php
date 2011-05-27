@@ -43,7 +43,8 @@ if($count>1)
 		echo "</div>";
 	}
 else
-	echo "<div class=\"error\">Your Zipcode is boring! <br /> No Images :(</div>";
+	if($nocount==1)
+		echo "<div class=\"error\">Your Zipcode is boring! <br /> No Images :(</div>";
 curl_close($ch);
 curl_close($ch1);
 ?>
