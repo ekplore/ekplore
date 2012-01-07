@@ -14,7 +14,7 @@ else
 $ch1 = curl_init();
 
 // set URL and other appropriate options
-curl_setopt($ch1, CURLOPT_URL, "http://beta.ekplore.com/getzip.php");
+curl_setopt($ch1, CURLOPT_URL, $site_url."getzip.php");
 curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1); 
 // grab URL and pass it to the browser
 $zip = curl_exec($ch1);
@@ -37,7 +37,7 @@ for($i=0; $i<count($meetup['results']);$i++){
 	$link = $meetup['results'][$i]['event_url'];
 	$photo = $meetup['results'][$i]['photo_url'];
 	if(!isset($photo))
-		$photo="http://beta.ekplore.com/images/meetup_logo.gif";
+		$photo=$site_url."images/meetup_logo.gif";
 	echo "<div class=\"postBar\">";
 	echo "<div class=\"postPhoto\">";
 	echo "<a href=".$link."><img src=\"".$photo."\"/></a>";
@@ -53,6 +53,6 @@ for($i=0; $i<count($meetup['results']);$i++){
 
 
 //Close Curl Connections
-curl_close($meet);
-curl_close($ch1);
+// curl_close($meet);
+// curl_close($ch1);
 ?>

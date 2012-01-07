@@ -3,6 +3,7 @@
 		$azip = $_POST["zip"];
 		
 	include('location.php');
+    include('setting.php');
 ?>
 <html>
     <head>
@@ -30,7 +31,7 @@
             <div class="headerContainer">
                 <div class="logo"></div>
                     <div class="searchbar">
-                    	<form action="/" method="post">
+                    	<form action="<?php echo $site_url;?>" method="post">
                             <input type="text" class="text" name="zip" placeholder='Type in a zip code ...' ></input>
 	                            <div class="searchbutton"> <input type="image" class="searchbutton" src="images/search.png" value="Submit" alt="Submit"/></div>
 						</form>
@@ -53,7 +54,7 @@
             </div>
         </div>
         <div class="map">
-            <?php include('mapscript.php')?>
+            <?php include('mapscript.php');?>
         </div>
             <div class="bottom">
 

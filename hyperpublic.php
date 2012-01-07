@@ -17,7 +17,7 @@ else
 $ch1 = curl_init();
 
 // set URL and other appropriate options
-curl_setopt($ch1, CURLOPT_URL, "http://beta.ekplore.com/getzip.php");
+curl_setopt($ch1, CURLOPT_URL, $site_url."getzip.php");
 curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1); 
 // grab URL and pass it to the browser
 $zip = curl_exec($ch1);
@@ -45,6 +45,6 @@ if($count>1)
 else
 	if($nocount==1)
 		echo "<div class=\"error\">Your Zipcode is boring! <br /> No Images :(</div>";
-curl_close($ch);
-curl_close($ch1);
+// curl_close($ch);
+// curl_close($ch1);
 ?>

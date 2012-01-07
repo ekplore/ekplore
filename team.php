@@ -10,7 +10,7 @@
 
         <div class="header">
             <div class="headerContainer">
-                <a href="http://beta.ekplore.com"><div class="logo"></div></a>
+                <a href="<?php echo $site_url; ?>"><div class="logo"></div></a>
                 <div class="searchbar">
                     	<form action="/" method="post">
                             <input type="text" class="text" name="zip" placeholder='Type in a zip code ...' ></input>

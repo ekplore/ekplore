@@ -20,7 +20,7 @@ else
 $ch1 = curl_init();
 
 // set URL and other appropriate options
-curl_setopt($ch1, CURLOPT_URL, "http://beta.ekplore.com/getzip.php");
+curl_setopt($ch1, CURLOPT_URL, "http://localhost/ekplore/getzip.php");
 curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1); 
 // grab URL and pass it to the browser
 $zip = curl_exec($ch1);
@@ -29,20 +29,17 @@ $zip = curl_exec($ch1);
 
 // Get Lat for zip
 $lt = curl_init();
-curl_setopt($lt, CURLOPT_URL, "http://beta.ekplore.com/zipcode.php?zip=".$zip."&lat=1");
+curl_setopt($lt, CURLOPT_URL, "http://localhost/ekplore/zipcode.php?zip=".$zip."&lat=1");
 curl_setopt($lt, CURLOPT_RETURNTRANSFER, 1);
 $lat = curl_exec($lt); 
 
 //Get Long for zip
 $lon = curl_init();
-curl_setopt($lon, CURLOPT_URL, "http://beta.ekplore.com/zipcode.php?zip=".$zip."&lng=1");
+curl_setopt($lon, CURLOPT_URL, "http://localhost/ekplore/zipcode.php?zip=".$zip."&lng=1");
 curl_setopt($lon, CURLOPT_RETURNTRANSFER, 1);
 $lng = curl_exec($lon);
 
-
-
-
-curl_close($ch1);
-curl_close($lat);
-curl_close($lon);
+// curl_close($ch1);
+// curl_close($lat);
+// curl_close($lon);
 ?>

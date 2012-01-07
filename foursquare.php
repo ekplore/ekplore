@@ -15,7 +15,7 @@ else
 $ch1 = curl_init();
 
 // set URL and other appropriate options
-curl_setopt($ch1, CURLOPT_URL, "http://beta.ekplore.com/getzip.php");
+curl_setopt($ch1, CURLOPT_URL, $site_url."getzip.php");
 curl_setopt($ch1, CURLOPT_RETURNTRANSFER, 1); 
 // grab URL and pass it to the browser
 $zip = curl_exec($ch1);
@@ -24,13 +24,13 @@ $zip = curl_exec($ch1);
 
 // Get Lat for zip
 $lt = curl_init();
-curl_setopt($lt, CURLOPT_URL, "http://beta.ekplore.com/zipcode.php?zip=".$zip."&lat=1");
+curl_setopt($lt, CURLOPT_URL, $site_url."zipcode.php?zip=".$zip."&lat=1");
 curl_setopt($lt, CURLOPT_RETURNTRANSFER, 1);
 $lat = curl_exec($lt); 
 
 //Get Long for zip
 $lon = curl_init();
-curl_setopt($lon, CURLOPT_URL, "http://beta.ekplore.com/zipcode.php?zip=".$zip."&lng=1");
+curl_setopt($lon, CURLOPT_URL, $site_url."zipcode.php?zip=".$zip."&lng=1");
 curl_setopt($lon, CURLOPT_RETURNTRANSFER, 1);
 $lng = curl_exec($lon);
 
@@ -75,8 +75,8 @@ for($i=0; $i<count($venues['response']['groups'][0]);$i++){
 }
 */
 //End Call Twitter
-curl_close($four);
-curl_close($ch1);
-curl_close($lat);
-curl_close($lon);
+// curl_close($four);
+// curl_close($ch1);
+// curl_close($lat);
+// curl_close($lon);
 ?>
